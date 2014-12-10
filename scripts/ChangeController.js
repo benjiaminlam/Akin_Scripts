@@ -83,6 +83,7 @@ function Update () {
 	else if(Application.loadedLevelName == "Morning")
 	{
 			levelFivePlayMode(distance,distance_z);
+			
 	}
 	else if(Application.loadedLevelName == "MiddayRevisit")
 	{
@@ -127,12 +128,11 @@ function levelFivePlayMode(dis:float,distance_z:float){
 	if(dis > distanceforLevelMorning)
 	{
 		creatureAloneMode();
-	}
-	else
-	{
-		
+	}else{
+	
 		generalPlayMode(distance_z);
 	}
+	
 }
 
 //MiddayRevisit
@@ -148,17 +148,8 @@ function generalPlayMode( distance_z:float) {
 	}
    if(separated == false && distance <= 5.0)
    {
-   		if(boyEnable ==true && distance_z >0)//join after seperated walking, the creature animations only can play if
-   		{                                      //the boy running in front of it.
-   			TogetherMove();
-   		}
-   		else if(boyEnable == false && distance_z < 0)// opposite of the previous if.
-   		{
-   			TogetherMove();
-   		}
-   		
-   		
-   		
+   		TogetherMove();
+
    }
    else
    {
@@ -228,6 +219,8 @@ function TogetherMove(){
 	isBoyAlone = false;
     //enemyDispear.enabled = true;
    //cameraController.enabled = true;
+   
+   
    if(Input.GetKeyDown("space"))
    {
      boyEnable=!boyEnable;

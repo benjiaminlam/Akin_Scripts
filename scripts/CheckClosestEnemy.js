@@ -20,7 +20,7 @@ function Start () {
 }
 
 function Update () {
-	if (Input.GetKeyDown (KeyCode.LeftAlt)) {
+	if (Input.GetKeyDown ("k")) {
 			for(var obj:Transform in objs) {
 				tempDistance = Vector3.Distance (gameObject.transform.position, obj.transform.position);
 				if (distance > tempDistance) {
@@ -41,7 +41,7 @@ function Update () {
 				distance = tempDistance;
 			}
 		}
-		else if(Input.GetKeyUp (KeyCode.LeftAlt)|| Input.GetKeyDown ("j")) {
+		else if(Input.GetKeyUp ("k")|| Input.GetKeyDown ("j")) {
 			target.position =Vector3(100000,100000,100000);
 		}
 }
